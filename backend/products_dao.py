@@ -33,22 +33,26 @@ def insert_new_product(connection,product):
 
     return cursor.lastrowid
 
-# def delete_product(connection,product_id):
-#     cursor=connection.cursor()
-#     query=("DELETE FROM products WHERE product_id="+str(product_id))
-#     cursor.execute(query)
-#     connection.commit()
-
-#     return product_id
-
-def delete_product(connection, product_id):
-    cursor = connection.cursor()
-    query = ("DELETE FROM products where product_id=" + str(product_id))
+def delete_product(connection,product_id):
+    cursor=connection.cursor()
+    query=("DELETE FROM products WHERE product_id="+str(product_id))
     cursor.execute(query)
     connection.commit()
 
-    return cursor.lastrowid
+    return product_id
+
+# def delete_product(connection, product_id):
+#     cursor = connection.cursor()
+#     query = ("DELETE FROM products where product_id=" + str(product_id))
+#     cursor.execute(query)
+#     connection.commit()
+
+#     return cursor.lastrowid
+
+# if __name__=="__main__":
+#     connection=get_sql_connection()
+#     print(delete_product(connection,12))
 
 if __name__=="__main__":
     connection=get_sql_connection()
-    print(delete_product(connection,12))
+    print(delete_product(connection,15))

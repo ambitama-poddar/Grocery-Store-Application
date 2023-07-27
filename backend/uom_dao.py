@@ -4,6 +4,7 @@ def get_uoms(connection):
     cursor = connection.cursor()
     query = ("select * from uom")
     cursor.execute(query)
+    
     response = []
     for (uom_id, uom_name) in cursor:
         response.append({
